@@ -84,7 +84,7 @@ module Faraday
       end
 
       def include?(key)
-        @names.include? key.downcase
+        super(@names[KeyMap[key].downcase])
       end
 
       alias has_key? include?
