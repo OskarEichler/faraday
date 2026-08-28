@@ -56,7 +56,7 @@ module Faraday
 
       def []=(key, val)
         key = KeyMap[key]
-        key = (@names[key.downcase] ||= key)
+        key = (@names[key.downcase] ||= key.dup.freeze)
         # join multiple values with a comma
         val = val.to_ary.join(', ') if val.respond_to?(:to_ary)
         super
