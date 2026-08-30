@@ -166,12 +166,6 @@ module Faraday
         hash.merge! other
       end
 
-      def clear
-        super
-        @names.clear
-        self
-      end
-
       def replace(other)
         clear
         update other
